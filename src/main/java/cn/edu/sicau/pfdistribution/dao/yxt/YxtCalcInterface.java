@@ -28,4 +28,14 @@ public interface YxtCalcInterface
 
     //获取某列车在某站停站时间
     public short GetTrainStopTime(int nlcxh,int nczh);
+
+    //根据车站名获取车站号
+    public int GetCzidFromCzm(String czm);
+    //根据两站名获取区间号
+    public int GetQjidFromCzm(String czm1,String czm2);
+    //根据车站返回所属线路名
+    public int GetXlmFromCzm(String czm);
+    //根据前后站关系获取换乘时间
+    //车站站顺位czm1--hczm--czm2
+    public int GetHcTimeFromCz(String czm1,String hczm,String czm2);
 }

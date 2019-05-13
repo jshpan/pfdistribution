@@ -189,4 +189,27 @@ public class yxtBaseCalc implements YxtCalcInterface
 
         return nstoptime;
     }
+
+    //根据车站名获取车站号
+    public int GetCzidFromCzm(String czm)
+    {
+        return 0;
+    }
+    //根据两站名获取区间号
+    public int GetQjidFromCzm(String czm1,String czm2)
+    {
+        return 0;
+    }
+    //根据车站返回所属线路名
+    public int GetXlmFromCzm(String czm)
+    {
+        return 0;
+    }
+
+    //根据前后站关系获取换乘时间
+    //车站站顺位czm1--hczm--czm2
+    public int GetHcTimeFromCz(String czm1,String hczm,String czm2)
+    {
+        return 0;
+    }
 }
