@@ -59,9 +59,9 @@ public class YxtMain implements InitializingBean
     //运行种类字典
     public static def_yxzlzd [][]yxzlzd = new def_yxzlzd[qjzs+1][yxzls+1];
     //线路车站
-    public static int [][]xlqjzd = new int[xls+1][xlczs+1];
+    public static int [][]xlczzd = new int[xls+1][xlczs+1];
     //线路区间
-    public static int [][]xlczzd = new int[xls+1][xlqjs+1];
+    public static int [][]xlqjzd = new int[xls+1][xlqjs+1];
 
     //根据车站号获取区间号
     public int GetQjhByCzh(int nczh1,int nczh2)

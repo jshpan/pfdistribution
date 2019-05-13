@@ -193,17 +193,62 @@ public class yxtBaseCalc implements YxtCalcInterface
     //根据车站名获取车站号
     public int GetCzidFromCzm(String czm)
     {
+        int czh = 0;
+        int i = 0;
+        if(czm == null||czm.isEmpty())
+            return 0;
+        for(i=1;i<YxtMain.czzs;i++)
+        {
+            if(YxtMain.cz[i].czm.equals(czm) == true)
+            {
+                return i;
+            }
+        }
         return 0;
     }
     //根据两站名获取区间号
     public int GetQjidFromCzm(String czm1,String czm2)
     {
+        int qjh = 0;
+        int i = 0;
+        if(czm1 == null||czm1.isEmpty())
+            return 0;
+        if(czm2 == null||czm2.isEmpty())
+            return 0;
+
+        for(i=1;i<YxtMain.qjzs;i++)
+        {
+            if(YxtMain.qj[i].czm1.equals(czm1) == true&&
+                    YxtMain.qj[i].czm2.equals(czm2) == true)
+            {
+                return i;
+            }
+        }
         return 0;
     }
     //根据车站返回所属线路名
-    public int GetXlmFromCzm(String czm)
+    public String GetXlmFromCzm(String czm)
     {
-        return 0;
+        String xlm = "";
+        int i = 0,j = 0;
+        int czh = 0;
+        if(czm == null||czm.isEmpty())
+            return xlm;
+        for(i=1;i<=YxtMain.xls;i++)
+        {
+            for(j=1;j<=YxtMain.xlczs;j++)
+            {
+                czh = YxtMain.xlczzd[i][j];
+                if(czh<=0||czh>YxtMain.czzs)
+                    continue;
+                if(YxtMain.cz[czh].czm.equals(czm) == true)
+                {
+                    xlm = YxtMain.xl[i].xlm;
+                    return xlm;
+                }
+            }
+        }
+        return xlm;
     }
 
     //根据前后站关系获取换乘时间
