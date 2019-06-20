@@ -255,6 +255,9 @@ public class yxtBaseCalc implements YxtCalcInterface
     //车站站顺位czm1--hczm--czm2
     public int GetHcTimeFromCz(String czm1,String hczm,String czm2)
     {
+        if(czm1.isEmpty()||hczm.isEmpty()||czm2.isEmpty())
+            return 0;
+        
         return 0;
     }
 }
